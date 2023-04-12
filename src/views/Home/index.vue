@@ -3,16 +3,19 @@
     <el-button-group>
       <el-button round type="primary" @click="() => handleClick('lazyImg')">lazyImg</el-button>
       <el-button round type="primary" @click="() => handleClick('pdf')">export pdf</el-button>
+      <el-button round type="primary" @click="() => handleClick('excel')">export excel</el-button>
     </el-button-group>
     <div class="content">
       <lazy-img v-if="module === 'lazyImg'" />
       <pdf v-if="module === 'pdf'" />
+      <excel v-if="module === 'excel'" />
     </div>
   </div>
 </template>
 <script>
 import LazyImg from '../lazyImg' // img lazy load
-import Pdf from '../pdf' // img lazy load
+import Pdf from '../pdf' // pdf
+import Excel from '../excel' // excel
 export default {
   name: 'Home',
   data() {
@@ -22,10 +25,9 @@ export default {
   },
   watch: {},
   computed: {},
-  components: { LazyImg, Pdf },
+  components: { LazyImg, Pdf, Excel },
   methods: {
     handleClick(type) {
-      console.log('type:', type)
       this.module = type
     }
   }
