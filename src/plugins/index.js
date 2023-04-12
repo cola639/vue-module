@@ -16,7 +16,7 @@ export default {
     // 模态框对象
     Vue.prototype.$modal = modal
 
-    // pdf
-    Vue.prototype.htmlToPDF = htmlToPDF
+    // 导出PDF
+    Vue.prototype.getPdf = htmlToPDF
   }
 }
